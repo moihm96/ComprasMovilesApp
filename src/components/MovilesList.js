@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { MovilesListItem } from './MovilesListItem';
 
+import { URL } from '../helper/ApiURLs';
+
 export function MovilesList() {
-  const { loading, data } = useFetch('https://front-test-api.herokuapp.com/api/product');
+  const { loading, data } = useFetch(`${URL}/product`);
 
   const [searchText, setSearchText] = useState('');
   const [searchParam] = useState(['brand', 'model']);
@@ -36,25 +38,25 @@ export function MovilesList() {
       </div>
 
       {
-              loading
-                ? (
-                  <div className="alert alert-info text-center">
-                    Loading...
-                  </div>
-                )
-                : (
-                  <div className="row rows-cols-1 row-cols-md-4 g-4" style={{ padding: '2%' }}>
-                    {
-                        search(data).map((movil) => (
-                          <MovilesListItem
-                            key={movil.id}
-                            {...movil}
-                          />
-                        ))
-                    }
-                  </div>
-                )
-          }
+        loading
+          ? (
+            <div className="alert alert-info text-center">
+              Loading...
+            </div>
+          )
+          : (
+            <div className="row rows-cols-1 row-cols-md-4 g-4" style={{ padding: '2%' }}>
+              {
+                search(data).map((movil) => (
+                  <MovilesListItem
+                    key={movil.id}
+                    {...movil}
+                  />
+                ))
+              }
+            </div>
+          )
+      }
     </div>
 
   );

@@ -6,7 +6,7 @@ export function ComprasMovilesApp() {
   const [numCompras, setNumCompras] = useState(localStorage.getItem('contCompras') || 0);
 
   useEffect(() => {
-    if (numCompras == 0) return;
+    if (numCompras === 0) return;
 
     localStorage.setItem('contCompras', numCompras);
   }, [numCompras]);
@@ -19,6 +19,7 @@ export function ComprasMovilesApp() {
 
     return () => {
       clearTimeout(timer);
+      localStorage.removeItem('contCompras');
     };
   }, []);
 

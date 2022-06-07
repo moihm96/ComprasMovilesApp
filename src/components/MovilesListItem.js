@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Item } from './ItemScreen/Item';
 
 export function MovilesListItem({
   id, brand, imgUrl, model, price,
@@ -20,44 +21,19 @@ export function MovilesListItem({
         <div className="col-8">
           {brand ? (
             <h3>
-              {' '}
-              { brand }
+              {brand}
             </h3>
           ) : (<h3> Marca: No disponible</h3>)}
           <ul className="list-group list-group-flush">
-            {model ? (
-              <li className="list-group-item">
-                {' '}
-                <b>Modelo: </b>
-                {' '}
-                { model }
-              </li>
-            ) : (
-              <li className="list-group-item">
-                {' '}
-                <b>Modelo: </b>
-                {' '}
-                No disponible
-              </li>
-            )}
-            {price ? (
-              <li className="list-group-item">
-                {' '}
-                <b>Precio: </b>
-                {' '}
-                { price }
-                {' '}
-                $
-              </li>
-            ) : (
-              <li className="list-group-item">
-                {' '}
-                <b>Precio: </b>
-                {' '}
-                No disponible
-              </li>
-            )}
-            <li className="list-group-item"><Link to={`/movil/${id}`}>Ver más...</Link></li>
+            <Item
+              item={model}
+              nombreItem="Modelo"
+            />
+            <Item
+              item={price ? `${price} $` : price}
+              nombreItem="Precio"
+            />
+            <li className="list-group-item"><Link to={`/${id}`}>Ver más...</Link></li>
           </ul>
         </div>
       </div>
