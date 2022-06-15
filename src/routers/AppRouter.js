@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Header } from '../components/Header';
-import { MovilesList } from '../components/MovilesList';
-import { MovilItemScreen } from '../components/ItemScreen/MovilItemScreen';
+import { Header } from '../components/Header/Header';
+import { MovilList } from '../pages/MovilesList/MovilList';
+import { MovilItemScreen } from '../pages/MovilItemScreen/MovilItemScreen';
 
 export function AppRouter() {
   return (
@@ -11,7 +11,7 @@ export function AppRouter() {
       <Routes>
         <Route path="/:movilId" element={<MovilItemScreen />} />
 
-        <Route path="/" element={<MovilesList />} />
+        <Route path="/" element={<MovilList />} />
       </Routes>
     </BrowserRouter>
   );

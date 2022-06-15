@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Selector.css'
 import Select from 'react-select';
 
 export function Selector({ optionsR, setCodigo, nameLabel }) {
@@ -18,17 +19,14 @@ export function Selector({ optionsR, setCodigo, nameLabel }) {
     setCodigo(value.value);
   };
   return (
-    <div style={{
-      padding: '1%', width: '50%', display: 'flex', alignSelf: 'flex-end',
-    }}
-    >
-      <label style={{ padding: '3.5%', flex: '1' }}>
+    <div className="container-selector">
+      <label className="label">
         {nameLabel}
         :
         {' '}
       </label>
       <Select
-        styles={{ flex: '1' }}
+        className="selector-item"
         value={valorOptions}
         defaultValue={options[0]}
         options={options}

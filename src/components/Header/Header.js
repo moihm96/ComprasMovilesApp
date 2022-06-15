@@ -1,21 +1,18 @@
 import React, { useContext } from 'react';
+import './Header.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { BreadCrumbs } from './BreadCrumbs';
-import { AppContext } from '../AppContext';
+import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs';
+import { AppContext } from '../../AppContext';
 
 export function Header() {
   const { numCompras } = useContext(AppContext);
   return (
-    <div style={{
-      display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: '3%', borderBottom: ' 2px solid grey',
-    }}
-    >
-
+    <div className="header-container">
       <h5>Compras móviles</h5>
 
       <BreadCrumbs />
 
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div className="icon-container">
         <ShoppingCartIcon />
         <h5>{numCompras}</h5>
       </div>

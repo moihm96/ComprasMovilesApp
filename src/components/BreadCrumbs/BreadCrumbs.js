@@ -1,4 +1,5 @@
 import React from 'react';
+import './BreadCrumbs.css';
 import { useLocation, Link } from 'react-router-dom';
 import { Breadcrumb } from 'antd';
 
@@ -9,7 +10,7 @@ export function BreadCrumbs() {
     const pathnames = pathname.split('/').filter((item) => item);
     return (
       <div>
-        <Breadcrumb style={{ fontSize: '130%' }}>
+        <Breadcrumb className="container-breadcrumb">
           {pathnames.length > 0 ? (
             <Breadcrumb.Item key="Principal">
               <Link to="/">Principal</Link>

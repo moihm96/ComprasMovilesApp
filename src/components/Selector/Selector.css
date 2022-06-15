@@ -1,0 +1,15 @@
+.container-selector {
+    display: flex;
+    align-self: flex-end;
+    padding: 1%;
+    width: 50%;
+}
+
+.label {
+    flex: 1;
+    padding: 3.5%;
+}
+
+.selector-item {
+    flex: 1;
+}

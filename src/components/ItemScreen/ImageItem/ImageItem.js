@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './ImageItem.css'
 export function ImageItem({ data }) {
   const { imgUrl, model } = data;
   return (
-    <div style={{ flex: '0 0 25%', marginRight: '15%', marginTop: '5%' }}>
+    <div className="image-container">
       <img
         src={imgUrl}
         alt={model}

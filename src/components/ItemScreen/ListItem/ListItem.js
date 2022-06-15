@@ -1,5 +1,8 @@
 import React from 'react';
-import { Item } from './Item';
+
+import './ListItem.css'
+
+import { Item } from '../Item/Item';
 
 export function ListItem({ data }) {
   const {
@@ -9,7 +12,7 @@ export function ListItem({ data }) {
   } = data;
 
   return (
-    <div style={{ flex: '0 0 32%', marginRight: '15%', marginTop: '2%' }}>
+    <div className="list-item-container">
       <h3>
         {brand}
 
